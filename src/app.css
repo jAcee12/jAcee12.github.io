@@ -1,0 +1,52 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@import "@fontsource/fira-mono";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  section {
+    @apply px-20 py-0;
+  }
+}
+
+@layer components {
+  .socials {
+    @apply fill-[#2b2d3b] dark:fill-white cursor-pointer h-6 w-6 hover:-translate-y-1 transition-all hover:h-8 hover:w-8
+  }
+
+  .btn-hero {
+    @apply font-bold transition ease-in-out delay-100 duration-300 rounded-lg  px-2 py-1 my-1 md:my-0 text-xl h-[48px] bg-white text-black shadow-md
+    dark:bg-[#2b2d3b] dark:text-white w-36 mx-auto;
+  }
+
+  .btn-hero:hover {
+    @apply -translate-y-1 from-blue-500 to-cyan-500
+  }
+
+  .slider {
+    @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-[#ccc] duration-[0.4s] flex items-center rounded-full p-0
+  }
+
+  input:checked + .slider {
+    @apply bg-[#2196f3] shadow-[0_0_1px_#2196f3]
+  }
+
+  .slider:before {
+    @apply content-[""] h-4 w-4 inset-x-[4px] bg-white rounded-full shadow ease-linear transition-transform duration-[0.3s]
+  }
+
+  .switch {
+    @apply relative inline-block w-9 h-5
+  }
+
+  .switch input {
+    @apply opacity-0 w-0 h-0
+  }
+
+  input:checked + .slider:before {
+    @apply translate-x-5 transition-transform ease-linear duration-[0.3s]
+  }
+}
